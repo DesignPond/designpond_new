@@ -1,0 +1,16 @@
+<?php
+
+namespace Acme\Bar;
+
+class FooBoilerplate{
+
+    public $bar;
+    public $baz;
+
+    public function __construct($bar,$baz)
+    {
+        $this->bar = $bar;
+        $this->baz = $baz;
+    }
+
+}

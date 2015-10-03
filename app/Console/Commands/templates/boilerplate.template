@@ -1,0 +1,63 @@
+<?php
+
+namespace {{ namespace }}\Repo;
+
+use {{ namespace }}\Repo\{{ class }}Interface;
+use {{ namespace }}\Entities\{{ class }} as M;
+
+class {{ class }}Eloquent implements {{ class }}Interface{
+
+    protected ${{ name }};
+
+    public function __construct(M ${{ name }})
+    {
+        $this->{{ name }} = ${{ name }};
+    }
+
+    public function getAll()
+    {
+        return $this->{{ name }}->all();
+    }
+
+    public function find($id)
+    {
+        return $this->{{ name }}->find($id);
+    }
+
+    public function create(array $data)
+    {
+        ${{ name }} = $this->{{ name }}->create(array(
+            'title' => $data['title']
+        ));
+
+        if( ! ${{ name }} )
+        {
+            return false;
+        }
+
+        return ${{ name }};
+    }
+
+    public function update(array $data)
+    {
+        ${{ name }} = $this->{{ name }}->findOrFail($data['id']);
+
+        if( ! ${{ name }} )
+        {
+            return false;
+        }
+
+        ${{ name }}->title = $data['title'];
+
+        ${{ name }}->save();
+
+        return ${{ name }};
+    }
+
+    public function delete($id)
+    {
+        ${{ name }} = $this->{{ name }}->find($id);
+
+        return ${{ name }}->delete();
+    }
+}
