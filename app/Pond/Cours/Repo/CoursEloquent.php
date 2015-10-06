@@ -1,9 +1,9 @@
 <?php
 
-namespace Pond\Repo;
+namespace App\Pond\Cours\Repo;
 
-use Pond\Repo\CoursInterface;
-use Pond\Entities\Cours as M;
+use App\Pond\Cours\Repo\CoursInterface;
+use App\Pond\Cours\Entities\Cours as M;
 
 class CoursEloquent implements CoursInterface{
 

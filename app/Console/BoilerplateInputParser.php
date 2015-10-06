@@ -8,8 +8,10 @@ class BoilerplateInputParser
     {
         $segments  = explode('\\',str_replace('/','\\',$path));
         $name      = array_pop($segments);
-        $namespace = implode('\\',$segments);
-        $base      = $base.'/'.implode('/',$segments).'/'.$name;
+        $namespace = $base.'/'.$name;
+        $namespace = str_replace('/','\\',$namespace);
+
+        $base      = $base.implode('/',$segments).'/'.$name;
 
         $propreties = $this->parsePropreties($propreties);
 

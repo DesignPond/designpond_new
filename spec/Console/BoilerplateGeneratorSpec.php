@@ -29,7 +29,7 @@ class BoilerplateGeneratorSpec extends ObjectBehavior
 
         $file->get($template)->shouldBeCalled()->willReturn('template');
 
-        $file->makeDirectory('Acme/Bar/Foo/Repo')->shouldBeCalled();
+        //$file->makeDirectory('Acme/Bar/Foo/Repo')->shouldBeCalled();
 
         $mustache->render('template',$input)->shouldBeCalled()->willReturn('stub');
 

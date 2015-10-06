@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ namespace }}\Entities;
+
+use Illuminate\Database\Eloquent\Model;
+
+class {{ class }} extends Model
+{
+    /**
+    * The table associated with the model.
+    *
+    * @var string
+    */
+   protected $table = '{{ name }}';
+}

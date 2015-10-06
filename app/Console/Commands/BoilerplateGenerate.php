@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Console\BoilerplateInputParser;
 use App\Console\BoilerplateGenerator;
+use Illuminate\Filesystem\Filesystem;
 
 class BoilerplateGenerate extends Command
 {
@@ -26,17 +27,20 @@ class BoilerplateGenerate extends Command
 
     protected $generator;
 
+    protected $file;
+
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(BoilerplateInputParser $parser, BoilerplateGenerator $generator)
+    public function __construct(BoilerplateInputParser $parser, BoilerplateGenerator $generator, Filesystem $file)
     {
         parent::__construct();
 
-        $this->parser = $parser;
+        $this->parser    = $parser;
         $this->generator = $generator;
+        $this->file      = $file;
     }
 
     /**
@@ -53,18 +57,33 @@ class BoilerplateGenerate extends Command
             $this->option('properties')
         );
 
+        $this->file->makeDirectory($input->base.'/Repo');
+        $this->file->makeDirectory($input->base.'/Entities');
+        
         // Create a file with the correct boilerplate
         $this->generator->make(
             $input,
-            app_path('Console/Commands/templates/boilerplate.template'),
-            $this->getClassPath($input)
+            app_path('Console/Commands/templates/eloquent.template'),
+            $this->getClassPath($input,'Eloquent')
+        );
+
+        $this->generator->make(
+            $input,
+            app_path('Console/Commands/templates/interface.template'),
+            $this->getClassPath($input,'Interface')
+        );
+
+        $this->generator->make(
+            $input,
+            app_path('Console/Commands/templates/model.template'),
+            $this->option('base').'/'.$this->argument('name').'/Entities/'.$this->argument('name').'.php'
         );
 
         $this->info("All done!");
     }
 
-    private function getClassPath($input)
+    private function getClassPath($input,$type)
     {
-        return sprintf("%s/%sEloquent.php", $this->option('base').'/'.$this->argument('name').'/Repo', $input->class);
+        return sprintf("%s/%s%s.php", $this->option('base').'/'.$this->argument('name').'/Repo', $input->class, $type);
     }
 }

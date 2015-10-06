@@ -20,8 +20,6 @@ class BoilerplateGenerator
     {
         $template = $this->file->get($template);
 
-        $this->file->makeDirectory($input->base.'/Repo');
-
         $stub = $this->mustache->render($template,$input);
 
         $this->file->put($destination,$stub);
