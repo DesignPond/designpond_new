@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Pond\Cours\Entities;
+namespace tests\temp\Foo\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cours extends Model
+class Foo extends Model
 {
     /**
     * The table associated with the model.
     *
     * @var string
     */
-   protected $table = 'cours';
+   protected $table = 'foo';
 }

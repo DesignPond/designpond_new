@@ -8,4 +8,6 @@ $I->seeInShellOutput('All done!');
 
 $I->openFile("tests/temp/Acme/Bar/Foo/Repo/FooEloquent.php");
 $I->seeFileContentsEqual(file_get_contents('tests/acceptance/stubs/FooEloquent.stub'));
-$I->cleanDir('tests/temp/Acme/Bar/Foo');
+
+$I->cleanDir('tests/temp/Bar/Foo/Repo');
+$I->cleanDir('tests/temp/Bar/Foo/Entities');

@@ -29,7 +29,7 @@ class BoilerplateInputParserSpec extends ObjectBehavior
     {
         $input = $this->parse('Foo/Bar/MyCommand','Foo\Bar', 'username , email');
 
-        $input->namespace->shouldBe('Foo\Bar');
+        $input->namespace->shouldBe('Foo\Bar\MyCommand');
     }
 
     function it_parses_the_propreties_for_the_classe()

@@ -57,9 +57,12 @@ class BoilerplateGenerate extends Command
             $this->option('properties')
         );
 
-        $this->file->makeDirectory($input->base.'/Repo');
-        $this->file->makeDirectory($input->base.'/Entities');
-        
+        if($this->file->isDirectory($input->base))
+        {
+            $this->file->makeDirectory($input->base.'/Repo');
+            $this->file->makeDirectory($input->base.'/Entities');
+        }
+
         // Create a file with the correct boilerplate
         $this->generator->make(
             $input,
@@ -76,7 +79,7 @@ class BoilerplateGenerate extends Command
         $this->generator->make(
             $input,
             app_path('Console/Commands/templates/model.template'),
-            $this->option('base').'/'.$this->argument('name').'/Entities/'.$this->argument('name').'.php'
+            $input->base.'/Entities/'.$input->class.'.php'
         );
 
         $this->info("All done!");
@@ -84,6 +87,6 @@ class BoilerplateGenerate extends Command
 
     private function getClassPath($input,$type)
     {
-        return sprintf("%s/%s%s.php", $this->option('base').'/'.$this->argument('name').'/Repo', $input->class, $type);
+        return sprintf("%s/%s%s.php", $input->base.'/Repo', $input->class, $type);
     }
 }

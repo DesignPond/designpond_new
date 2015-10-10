@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Pond\Cours\Repo;
+namespace tests\temp\Foo\Repo;
 
-interface CoursInterface{
+interface FooInterface{
 
     public function getAll();
     public function find($id);

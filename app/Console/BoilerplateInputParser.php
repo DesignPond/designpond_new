@@ -11,7 +11,8 @@ class BoilerplateInputParser
         $namespace = $base.'/'.$name;
         $namespace = str_replace('/','\\',$namespace);
 
-        $base      = $base.implode('/',$segments).'/'.$name;
+        $rest      = array_pop($segments);
+        $base      = $base.'/'.$rest.'/'.$name;
 
         $propreties = $this->parsePropreties($propreties);
 
