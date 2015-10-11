@@ -33,7 +33,7 @@
     <div class="container">
         <div class="navbar-header">
             <a href="#" class="navbar-brand navbar-logo">
-                <span style="color: #0f9d84;">Design</span><span class="text-muted">Pond</span>
+                <span class="text-info">Design</span><span class="text-muted">Pond</span>
             </a>
             <button class="btn btn-link visible-xs" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                 <i class="fa fa-bars"></i>
@@ -41,20 +41,11 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="landing.html">Home</a>
-                </li>
+                <li class="active"><a href="{{ url('/') }}">Accueil</a></li>
                 <li>
-                    <a href="features.html">Features</a>
-                </li>
-                <li>
-                    <a href="price.html">Plans & Pricing</a>
-                </li>
-                <li>
-                    <a href="blog.html">Blog</a>
-                </li>
-                <li>
-                    <div class="m-t-sm"><a href="signin.html" class="btn btn-link btn-sm">Sign in</a> <a href="signup.html" class="btn btn-sm btn-success m-l"><strong>Sign up</strong></a></div>
+                    <div class="m-t-sm">
+                        <a href="mailto:info@designpond.ch" class="btn btn-sm btn-info m-l"><strong>Contactez-moi!</strong></a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -71,38 +62,24 @@
 
 <!-- footer -->
 <footer id="footer">
-    <div class="bg-primary text-center">
-        <div class="container wrapper">
-            <div class="m-t-xl m-b">
-                For your faster and easier web development.
-                <a href="http://themeforest.net/user/Flatfull/portfolio?ref=flatfull" target="_blank" class="btn btn-lg btn-dark b-white bg-empty m-sm">Download it</a>
-                <a href="index.html" target="_blank" class="btn btn-lg btn-warning b-white bg-empty m-sm">Live Preview</a>
-            </div>
-        </div>
-        <i class="fa fa-caret-down fa-4x text-primary m-b-n-lg block"></i>
+    <div class="bg-info text-center">
+        <i class="fa fa-caret-down fa-4x text-info m-b-n-lg block"></i>
     </div>
     <div class="bg-dark dker wrapper">
         <div class="container text-center m-t-lg">
             <div class="row m-t-xl m-b-xl">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">
-                    <i class="fa fa-envelope-o fa-3x icon-muted"></i>
-                    <h5 class="text-uc m-b m-t-lg">Mail Us</h5>
+                    <i class="fa fa-envelope-o fa-3x icon-muted"></i><br/><br/>
                     <p class="text-sm"><a href="mailto:hey@example.com">info@designpond.ch</a></p>
                 </div>
                 <div class="col-sm-4"></div>
             </div>
             <div class="m-t-xl m-b-xl">
                 <p>
-                    <a href="https://www.facebook.com/cindyleschaud" class="btn btn-icon btn-rounded btn-facebook bg-empty m-sm">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="https://twitter.com/DesignPond" class="btn btn-icon btn-rounded btn-twitter bg-empty m-sm">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="https://ch.linkedin.com/in/cindyleschaud" class="btn btn-icon btn-rounded btn-gplus bg-empty m-sm">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
+                    <a href="https://www.facebook.com/cindyleschaud" class="btn btn-icon btn-rounded btn-facebook bg-empty m-sm"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/DesignPond" class="btn btn-icon btn-rounded btn-twitter bg-empty m-sm"><i class="fa fa-twitter"></i></a>
+                    <a href="https://ch.linkedin.com/in/cindyleschaud" class="btn btn-icon btn-rounded btn-gplus bg-empty m-sm"><i class="fa fa-linkedin"></i></a>
                 </p>
                 <p>
                     <a href="#content" data-jump="true" class="btn btn-icon btn-rounded btn-dark b-dark bg-empty m-sm text-muted"><i class="fa fa-angle-up"></i></a>
