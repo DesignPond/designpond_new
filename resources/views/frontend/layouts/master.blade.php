@@ -42,6 +42,8 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="{{ url('/') }}">Accueil</a></li>
+                <li><a href="#work">Réalisations</a></li>
+                <li><a href="#cours">Cours</a></li>
                 <li>
                     <div class="m-t-sm">
                         <a href="mailto:info@designpond.ch" class="btn btn-sm btn-info m-l"><strong>Contactez-moi!</strong></a>

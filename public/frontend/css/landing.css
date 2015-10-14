@@ -76,6 +76,11 @@ ul li{
     padding: 0;
 }
 
+.box img{
+    max-width: 100%;
+    border: 1px solid #f1f1f1;
+}
+
 /*phone*/
 @media (max-width: 767px) {
 	.navbar-fixed-top + section{
