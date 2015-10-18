@@ -81,6 +81,10 @@ ul li{
     border: 1px solid #f1f1f1;
 }
 
+.list p{
+    font-size: 14px;
+}
+
 /*phone*/
 @media (max-width: 767px) {
 	.navbar-fixed-top + section{

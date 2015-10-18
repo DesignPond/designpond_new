@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SendMessageRequest;
 
 class HomeController extends Controller
 {
@@ -19,68 +20,31 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Send contact message
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function create()
-    {
-        //
-    }
+    public function sendMessage(Request $request){
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $validator = \Validator::make($request->all(), [
+            'email'       => 'required',
+            'nom'         => 'required',
+            'information' => 'required',
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        if ($validator->fails())
+        {
+            return redirect('/?#cours')->withErrors($validator)->withInput();
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+        $data = ['email' => $request->email, 'nom' => $request->nom, 'remarque' => $request->remarque, 'information' => $request->information ];
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        \Mail::send('emails.contact', $data , function($message)
+        {
+            $message->to('info@designpond.ch', 'DesignPond')->subject('Message depuis le site www.designpond.ch');
+        });
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect('/')->with(['status' => 'primary', 'message' => '<strong>Merci pour votre message</strong><br/>Je vous contacterai dès que possible.']);
+
     }
 }

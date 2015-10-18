@@ -12,3 +12,4 @@
 */
 
 Route::get('/', array('as' => 'home', 'uses' => 'Frontend\HomeController@index'));
+Route::post('sendMessage', 'Frontend\HomeController@sendMessage');

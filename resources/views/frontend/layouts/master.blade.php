@@ -32,7 +32,7 @@
 <header id="header" class="navbar navbar-fixed-top bg-white box-shadow b-b b-light"  data-spy="affix" data-offset-top="1">
     <div class="container">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand navbar-logo">
+            <a href="/" class="navbar-brand navbar-logo">
                 <span class="text-info">Design</span><span class="text-muted">Pond</span>
             </a>
             <button class="btn btn-link visible-xs" type="button" data-toggle="collapse" data-target=".navbar-collapse">

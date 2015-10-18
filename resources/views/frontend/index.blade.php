@@ -5,6 +5,19 @@
         <div class="text-center">
             <div class="container">
 
+                @if( $errors->has() || Session::has('status'))
+                    <?php $class  = ($errors->has() ? 'warning' : Session::get('status')); ?>
+                    <?php $status = ( $class == 'danger' || $class == 'info' ? $class : 'warning' ); ?>
+                    <div class="alert alert-dismissable alert-{{ $status }}">
+                        @foreach($errors->all() as $message)
+                            <p>{{ $message }}</p>
+                        @endforeach
+                        @if(Session::has('message'))
+                            <p>{!! Session::get('message') !!}</p>
+                        @endif
+                    </div>
+                @endif
+
                 <div class="m-t-xl">
                     <div class="text-uc h1 font-bold inline">
                         <div class="pull-left m-r-sm "> Hello! <span class="font-thin text-muted">Je m’appelle Cindy</span></div>
@@ -37,52 +50,52 @@
             <div class="row">
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/tc.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.tribunauxcivils.ch"><i class="fa fa-link"></i> www.tribunauxcivils.ch</a>
+                        <a target="_blank" href="http://www.tribunauxcivils.ch"><img src="{{ asset('frontend/web/tc.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.tribunauxcivils.ch">www.tribunauxcivils.ch</a>
                     </p>
                 </div>
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/rjne.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.rjne.ch"><i class="fa fa-link"></i> www.rjne.ch</a>
+                        <a target="_blank" href="http://www.rjne.ch"><img src="{{ asset('frontend/web/rjne.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.rjne.ch">www.rjne.ch</a>
                     </p>
                 </div>
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/ddt.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.droitdutravail.ch"><i class="fa fa-link"></i> www.droitdutravail.ch</a>
+                        <a target="_blank" href="http://www.droitdutravail.ch"><img src="{{ asset('frontend/web/ddt.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.droitdutravail.ch">www.droitdutravail.ch</a>
                     </p>
                 </div>
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/praticien.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.drozmotos.ch"><i class="fa fa-link"></i> www.droitpraticien.ch</a>
+                        <a target="_blank" href="http://www.drozmotos.ch"><img src="{{ asset('frontend/web/praticien.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.drozmotos.ch">www.droitpraticien.ch</a>
                     </p>
                 </div>
             </div>
             <div class="row m-b-xl">
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/des.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.droitenschemas.ch"><i class="fa fa-link"></i> www.droitenschemas.ch</a>
+                        <a target="_blank" href="http://www.droitenschemas.ch"><img src="{{ asset('frontend/web/des.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.droitenschemas.ch">www.droitenschemas.ch</a>
                     </p>
                 </div>
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/uninext.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.alumnine-droit.ch"><i class="fa fa-link"></i> www.alumnine-droit.ch</a>
+                        <a target="_blank" href="http://www.alumnine-droit.ch"><img src="{{ asset('frontend/web/uninext.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.alumnine-droit.ch">www.alumnine-droit.ch</a>
                     </p>
                 </div>
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/jano.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.janohair.ch"><i class="fa fa-link"></i> www.janohair.ch</a>
+                        <a target="_blank" href="http://www.janohair.ch"><img src="{{ asset('frontend/web/jano.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.janohair.ch">www.janohair.ch</a>
                     </p>
                 </div>
                 <div class="col-sm-3 text-center wrapper-sm">
                     <p class="m-b-lg m-t-lg box">
-                        <img src="{{ asset('frontend/web/cieana.jpg') }}" alt="" />
-                        <a class="btn btn-info btn-block" target="_blank" href="http://www.cie-anadyomene.com"><i class="fa fa-link"></i> www.cie-anadyomene.com</a>
+                        <a target="_blank" href="http://www.cie-anadyomene.com"><img src="{{ asset('frontend/web/cieana.jpg') }}" class="thumbnail" alt="" /></a>
+                        <a class="btn btn-info btn-block" target="_blank" href="http://www.cie-anadyomene.com">www.cie-anadyomene.com</a>
                     </p>
                 </div>
             </div>
@@ -93,46 +106,67 @@
         <a name="cours"></a>
         <div class="container">
             <div class="row m-t-xl text-center">
-                <h3 class="text-info">Cours</h3>
-                <h4 class="m-t-xl"><i class="fa fa-code fa-2x text-info"></i></h4>
+                <h3 class="text-info">Besoin d'aide?</h3>
+                <h4 class="m-t-xl"><i class="fa fa-book fa-2x text-info"></i></h4>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
+            <div class="row m-t-xl m-b-xl">
+
+                <div class="col-sm-7">
+                    <h3 class="font-thin m-b-lg">Besoin de <span class="text-info">conseils</span> ou de <span class="text-info">cours particuliers</span> ?</h3>
+                    <p class="m-b-lg l-h-1x">
+                        Vous finissez vos études et ne savez pas comment vous orienter dans la jungle du multimédia?<br/>
+                    </p>
+                    <p class="m-b-lg l-h-1x">
+                        Je donne des cours de programmation pour débutants confirmé ou avancé.
+                    </p>
+                    <div class="row m-b-xl">
+                        <div class="col-sm-6 list">
+                            <p><i class="fa fa-fw fa-angle-right"></i>Introduction à la programmation</p>
+                            <p><i class="fa fa-fw fa-angle-right"></i>Interactivité javascript et /ou jQuery</p>
+                            <p><i class="fa fa-fw fa-angle-right"></i>Bases de données et architecture</p>
+                        </div>
+                        <div class="col-sm-6 list">
+                            <p><i class="fa fa-fw fa-angle-right"></i>Webdesign</p>
+                            <p><i class="fa fa-fw fa-angle-right"></i>Adobe Photoshop, Illustrator</p>
+                            <p><i class="fa fa-fw fa-angle-right"></i>Design et mise en page</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-sm-6">
-                    <form class="form-horizontal">
+                <div class="col-sm-5">
+
+                    <h3 class="font-thin m-b-lg">Contactez-moi</h3>
+
+                    <form class="form" method="post" action="{{ url('sendMessage') }}">
+                        {!! csrf_field() !!}
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                            </div>
+                            <label class="control-label"><strong>Prénom/Nom</strong></label>
+                            <input type="text" required class="form-control" name="nom" placeholder="Prénom/Nom">
                         </div>
+
                         <div class="form-group">
-                            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                            </div>
+                            <label class="control-label"><strong>Email</strong></label>
+                            <input type="email" required class="form-control" name="email" placeholder="Email">
                         </div>
+
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> Remember me
-                                    </label>
-                                </div>
-                            </div>
+                            <label class="control-label"><strong>Message</strong></label>
+                            <textarea class="form-control" name="remarque" rows="3"></textarea>
                         </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">Sign in</button>
-                            </div>
+
+                        <div class="radio">
+                            <label><input type="radio" required name="information" value="conseils" checked>Demande de conseils</label>
                         </div>
+                        <div class="radio">
+                            <label><input type="radio" required name="information" value="cours particuliers">Demande de cours particuliers</label>
+                        </div>
+
+                        <div class="text-right"><button type="submit" class="btn btn-info">Envoyer</button></div>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
-
-
 
 @stop
