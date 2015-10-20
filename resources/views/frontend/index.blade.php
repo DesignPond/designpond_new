@@ -113,24 +113,14 @@
 
                 <div class="col-sm-7">
                     <h3 class="font-thin m-b-lg">Besoin de <span class="text-info">conseils</span> ou de <span class="text-info">cours particuliers</span> ?</h3>
-                    <p class="m-b-lg l-h-1x">
-                        Vous finissez vos études et ne savez pas comment vous orienter dans la jungle du multimédia?<br/>
-                    </p>
-                    <p class="m-b-lg l-h-1x">
-                        Je donne des cours de programmation pour débutants confirmé ou avancé.
-                    </p>
-                    <div class="row m-b-xl">
-                        <div class="col-sm-6 list">
-                            <p><i class="fa fa-fw fa-angle-right"></i>Introduction à la programmation</p>
-                            <p><i class="fa fa-fw fa-angle-right"></i>Interactivité javascript et /ou jQuery</p>
-                            <p><i class="fa fa-fw fa-angle-right"></i>Bases de données et architecture</p>
-                        </div>
-                        <div class="col-sm-6 list">
-                            <p><i class="fa fa-fw fa-angle-right"></i>Webdesign</p>
-                            <p><i class="fa fa-fw fa-angle-right"></i>Adobe Photoshop, Illustrator</p>
-                            <p><i class="fa fa-fw fa-angle-right"></i>Design et mise en page</p>
-                        </div>
-                    </div>
+
+                    <h4 class="m-b-lg">J'offre:</h4>
+
+                    <p><i class="fa fa-fw fa-angle-right"></i>Cours de programmation (PHP/MySql) pour débutants.</p>
+                    <p><i class="fa fa-fw fa-angle-right"></i>Introduction à la <a href="https://fr.wikipedia.org/wiki/Programmation_orient%C3%A9e_objet" target="_blank">programmation orienté objet</a></p>
+                    <p><i class="fa fa-fw fa-angle-right"></i>Introduction aux test unitaires avec <a href="https://phpunit.de" target="_blank">PHPUnit</a></p>
+                    <p><i class="fa fa-fw fa-angle-right"></i>Bases de données et architecture</p>
+                    <p><i class="fa fa-fw fa-angle-right"></i>Webdesign (HTML/CSS + Photoshop)</p>
 
                 </div>
                 <div class="col-sm-5">
